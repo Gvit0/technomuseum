@@ -1,2 +1,3 @@
 # technomuseum
-techno museum
+links:
+/ar   /mueum /museumvov /logreg /ar-online

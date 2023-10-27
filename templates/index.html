@@ -2,24 +2,10 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <style>
-        /* Фиксированное меню сверху */
-        .menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #f1f1f1;
-        }
-    </style>
+
 </head>
 <body>
-    <div class="menu">
-        <a href="/museumvov">Музей ВОВ</a>
-        <a href="/museum">Музей</a>
-        <a href="/logreg">Войти</a>
-        <a href="/ar">AR</a>
-    </div>
+    {% include 'menuup.html' %}
     <h1>Добро пожаловать на мой сайт!</h1>
 </body>
 </html>
