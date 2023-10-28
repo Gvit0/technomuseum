@@ -26,6 +26,8 @@ jobs:
     - name: Start Ngrok
       run: |
         ngrok config add-authtoken 2RhU6sRGtMKKVtslhO5e0MKijcS_4ekpa6k3CKog6XCSCfmUH
+    - name: run Ngrok
+      run: |
         ngrok http 5000 &
     - name: ip
       shell: python
