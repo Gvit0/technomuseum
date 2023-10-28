@@ -21,6 +21,10 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    - name: Start Ngrok
+      run: |
+        ngrok authtoken 2RhU6sRGtMKKVtslhO5e0MKijcS_4ekpa6k3CKog6XCSCfmUH
+        ngrok http 5000 &
     - name: ip
       shell: python
       run: |
@@ -29,5 +33,15 @@ jobs:
         local_ip = socket.gethostbyname(hostname)
         print(local_ip)
     - name: Run Tests
+      run: python main.py
+
+    - name: Wait 28 minutes
+      run: sleep 1680  # 28 minutes = 28 * 60 seconds
+
+    - name: Stop main.py
+      run: pkill -f "python main.py"
+
+    - name: Finalize
       run: |
-        python main.py 
+        ngrok killall
+    
