@@ -5,9 +5,16 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/logreg')
+@app.route('/logreg', methods=['GET','POST'])
 def logreg():
-    return render_template('logreg.html')
+    if request.method == 'POST':
+        usenname = request.form['username']
+        password = request.form['password']
+        lr = int(request.form['lr'])
+        print(usenname,password,lr)
+        return redirect("/")
+    else:
+        return render_template('logreg.html')
 
 @app.route('/museum')
 def museum():

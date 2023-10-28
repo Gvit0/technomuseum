@@ -5,19 +5,16 @@
             display: flex;
         }
         .menu {
-<!--            position: fixed;-->
+            position: fixed;
             top: 0;
             left:0 ;
             width: 100%;
             background-color: #f1f1f1;
         }
-        .log {
-<!--            position: fixed;-->
+        .log{
+            position: absolute;
             top: 0;
-            text-align: right;
-            width: 100%;
-            background-color: #f1f1f1;
-
+            right: 50px;
         }
     </style>
 </head>
@@ -27,11 +24,12 @@
             <a href="/">Главная</a>
             <a href="/museumvov">Музей ВОВ</a>
             <a href="/museum">Музей</a>
-            <a href="/logreg">Войти</a>
             <a href="/ar">AR</a>
         </div>
-        <div class="log">
-            <a href="/logreg">Войти</a>
-        </div>
     </div>
+    <div class="log">
+
+        <a href="/logreg">Войти</a>
+    </div>
+
 </body>

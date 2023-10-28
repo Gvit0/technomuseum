@@ -21,14 +21,13 @@
 <body>
     {% include 'menuup.html' %}
     <div class="login-form">
-        <h2>Вход</h2>
-        <input type="text" placeholder="Ник" name="username">
-        <input type="password" placeholder="Пароль" name="password">
-        <button>Войти</button>
-        <h2>Регистрация</h2>
-        <input type="text" placeholder="Ник" name="username">
-        <input type="password" placeholder="Пароль" name="password">
-        <button>Зарегистрироваться</button>
+        <form action="/logreg" method="post">
+            <h2>Вход</h2>
+            <input type="text" placeholder="Ник" name="username">
+            <input type="password" placeholder="Пароль" name="password">
+            <button  type="submit" name="lr" value=1>Войти</button>
+            <button  type="submit" name="lr" value=2>Зарегистрироваться</button>
+        </form>
     </div>
 </body>
 </html>
