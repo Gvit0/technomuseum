@@ -25,5 +25,14 @@ def ar():
 def aronline():
     return render_template('ar-online.html')
 
+@app.route('/ird/m')
+def aronline():
+    return render_template('irdm.html')
+
+@app.route('/ird/mvov')
+def aronline():
+    return render_template('irdmvov.html')
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
