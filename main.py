@@ -1,5 +1,8 @@
 from flask import  *
+import sqlite3
 app = Flask(__name__)
+
+
 
 @app.route('/')
 def index():
@@ -8,13 +11,31 @@ def index():
 @app.route('/logreg', methods=['GET','POST'])
 def logreg():
     if request.method == 'POST':
-        usenname = request.form['username']
+        username = request.form['username']
         password = request.form['password']
-        lr = int(request.form['lr'])
-        print(usenname,password,lr)
-        return redirect("/")
+        lrp = int(request.form['lr'])
+        con = sqlite3.connect("database.db")
+
+        cursor = con.cursor()
+        if lrp == 2:
+            rights = 0
+            datatosend = (username, password, rights)
+            cursor.execute("INSERT INTO main (username, password, rights) VALUES (?,?,?)", datatosend)
+            con.commit()
+            return redirect("/")
+        else:
+            cursor.execute("SELECT password, rights FROM main WHERE username='"+username+"'")
+            passworddb, rightsdb = cursor.fetchone()
+            print(passworddb)
+            print(password)
+            if (str(passworddb) == str(password)):
+                return redirect("/")
+            else:
+                statuspas = 'Неверный пароль'
+                return render_template('logreg.html', statuspas=statuspas)
     else:
-        return render_template('logreg.html')
+        statuspas = ''
+        return render_template('logreg.html', statuspas=statuspas)
 
 @app.route('/museum')
 def museum():
