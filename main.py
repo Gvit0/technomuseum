@@ -26,11 +26,11 @@ def aronline():
     return render_template('ar-online.html')
 
 @app.route('/ird/m')
-def aronline():
+def irdm():
     return render_template('irdm.html')
 
 @app.route('/ird/mvov')
-def aronline():
+def irdmvov():
     return render_template('irdmvov.html')
 
 
