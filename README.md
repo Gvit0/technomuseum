@@ -1,15 +1,16 @@
 # technomuseum
 ### links:
 
- - [main](http://localhost:5000/)
- - [museum](http://localhost:5000/museum)
- -  [museumvov](http://localhost:5000/museumvov)
- - [log/reg](http://localhost:5000/logreg)
- - [AR](http://localhost:5000/ar)
- - [AR-online](http://localhost:5000/ar-online)
+ - [main](http://supreme-wallaby-assured.ngrok-free.app/)
+ - [museum](http://supreme-wallaby-assured.ngrok-free.app/museum)
+ -  [museumvov](http://supreme-wallaby-assured.ngrok-free.app/museumvov)
+ - [log/reg](http://supreme-wallaby-assured.ngrok-free.app/logreg)
+ - [AR](http://supreme-wallaby-assured.ngrok-free.app/ar)
+ - [AR-online](http://supreme-wallaby-assured.ngrok-free.app/ar-online)
 ### plan:
  - [x] create links
- - [ ] reg/log
+ - [x] reg/log
+ - [x] password cipher
  - [ ]  create subdomen
  - [ ] create background
  - [ ] ar button download
@@ -17,4 +18,4 @@
  - [ ] registration via mail
  - [ ] email notifications
  - [ ] send data on esp 
- - [ ] internet radio for sounds on ESP ((http://localhost:5000/ird/m) and (http://localhost:5000/ird/mvov))
+ - [ ] internet radio for sounds on ESP ((http://localhost:5000/ird/m) and (http://localhost:5000/ird/mvov))(localhost is ip)

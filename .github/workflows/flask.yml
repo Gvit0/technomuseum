@@ -28,7 +28,7 @@ jobs:
         ngrok config add-authtoken 2RhU6sRGtMKKVtslhO5e0MKijcS_4ekpa6k3CKog6XCSCfmUH
     - name: run Ngrok
       run: |
-        ngrok http 5000 &
+        ngrok http --domain=supreme-wallaby-assured.ngrok-free.app 5000 &
     - name: ip
       shell: python
       run: |
@@ -37,10 +37,10 @@ jobs:
         local_ip = socket.gethostbyname(hostname)
         print(local_ip)
     - name: Run Tests
-      run: python main.py
+      run: python main.py &
 
     - name: Wait 28 minutes
-      run: sleep 1680  # 28 minutes = 28 * 60 seconds
+      run: sleep 1200  # 20 minutes = 20 * 60 seconds
 
     - name: Stop main.py
       run: pkill -f "python main.py"

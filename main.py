@@ -1,5 +1,6 @@
 from flask import  *
 import sqlite3
+import hashlib
 app = Flask(__name__)
 
 
@@ -12,7 +13,8 @@ def index():
 def logreg():
     if request.method == 'POST':
         username = request.form['username']
-        password = request.form['password']
+        h = hashlib.md5(request.form['password'].encode('utf-8'))
+        password = h.hexdigest()
         lrp = int(request.form['lr'])
         con = sqlite3.connect("database.db")
 
@@ -26,8 +28,6 @@ def logreg():
         else:
             cursor.execute("SELECT password, rights FROM main WHERE username='"+username+"'")
             passworddb, rightsdb = cursor.fetchone()
-            print(passworddb)
-            print(password)
             if (str(passworddb) == str(password)):
                 return redirect("/")
             else:
