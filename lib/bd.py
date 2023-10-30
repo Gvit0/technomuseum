@@ -8,6 +8,7 @@ def create_table():
     cursor.execute("""CREATE TABLE IF NOT EXISTS main (
     username STRING,
     password STRING,
+    mail STRING,
     rights   STRING);
     """)
 def reg(user, password, rights):
