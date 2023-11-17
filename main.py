@@ -3,7 +3,7 @@ import sqlite3
 import hashlib
 app = Flask(__name__)
 
-
+buttons= ['это кнопка', 'это тоже']
 
 @app.route('/')
 def index():
