@@ -46,7 +46,7 @@ def logreg123():
 @app.route('/museum', methods=['GET'])
 def museum():
     if request.method == 'GET':
-        but=
+        but=1
     return render_template('museum.html')
 
 @app.route('/museumvov')
