@@ -9,8 +9,8 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/logreg', methods=['GET','POST'])
-def logreg():
+@app.route('/logreg123', methods=['GET','POST'])
+def logreg123():
     if request.method == 'POST':
         username = request.form['username']
         h = hashlib.md5(request.form['password'].encode('utf-8'))
@@ -37,8 +37,16 @@ def logreg():
         statuspas = ''
         return render_template('logreg.html', statuspas=statuspas)
 
-@app.route('/museum')
+@app.route('/logreg123', methods=['GET','POST'])
+def logreg123():
+    if request.method == 'POST':
+        pass
+    statuspas = ''
+    return render_template('logreg.html', statuspas=statuspas)
+@app.route('/museum', methods=['GET'])
 def museum():
+    if request.method == 'GET':
+        but=
     return render_template('museum.html')
 
 @app.route('/museumvov')
