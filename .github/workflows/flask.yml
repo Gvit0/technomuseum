@@ -39,7 +39,7 @@ jobs:
     - name: Run Tests
       run: python main.py &
 
-    - name: Wait 28 minutes
+    - name: Wait 20 minutes
       run: sleep 1200  # 20 minutes = 20 * 60 seconds
 
     - name: Stop main.py
