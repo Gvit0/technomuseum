@@ -6,5 +6,10 @@
 </head>
 <body>
     {% include 'menuup.html' %}
+    <form>
+        {% for but in buttons%}
+        <button type="submit" name="but" value="{{loop.index}}">{{but}}</button>
+        {% endfor%}
+    </form>
 </body>
 </html>

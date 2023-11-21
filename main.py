@@ -37,8 +37,8 @@ def logreg123():
         statuspas = ''
         return render_template('logreg.html', statuspas=statuspas)
 
-@app.route('/logreg123', methods=['GET','POST'])
-def logreg123():
+@app.route('/logreg', methods=['GET','POST'])
+def logreg():
     if request.method == 'POST':
         pass
     statuspas = ''
@@ -47,7 +47,7 @@ def logreg123():
 def museum():
     if request.method == 'GET':
         but=1
-    return render_template('museum.html')
+    return render_template('museum.html', buttons=buttons)
 
 @app.route('/museumvov')
 def museumvov():
