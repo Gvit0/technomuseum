@@ -98,7 +98,7 @@ def logout():
 @login_manager.user_loader
 def load_user(username):
     print("load_user")
-    return UserLogin().fromDB(username,dbase)
+    #return UserLogin().fromDB(username,dbase)
 
 
 def connect_db():
