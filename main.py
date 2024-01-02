@@ -26,7 +26,7 @@ users = {
 
 
 
-buttons= ['это кнопка', 'это тоже']
+buttons= ['это кнопка', 'это тоже', 'ТАм парам пам это тоже кнопка','А это нет', 'я пошитил это тоже кнопка','Это MaxiMax9055']
 
 @app.route('/')
 def index():
@@ -66,7 +66,13 @@ def logreg():
 @app.route('/museum', methods=['GET'])
 def museum():
     if request.method == 'GET':
-        but=1
+        but=request.args.get('but')
+        if but == None:
+            but=-1
+        else:
+            print("Data:")
+            print(but)
+
     return render_template('museum.html', buttons=buttons)
 
 @app.route('/museumvov')
