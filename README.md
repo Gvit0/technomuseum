@@ -19,3 +19,4 @@
  - [ ] email notifications
  - [ ] send data on esp 
  - [ ] internet radio for sounds on ESP ((http://localhost:5000/ird/m) and (http://localhost:5000/ird/mvov))(localhost is ip)
+supreme-wallaby-assured.ngrok-free.app
