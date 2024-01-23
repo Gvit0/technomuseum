@@ -1,7 +1,7 @@
 import os.path
-
+from lib.SendData import Sender
 from flask import  *
-from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
+#from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 import sqlite3
 import hashlib
 
@@ -9,9 +9,9 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = ('qwertyuiopasdfghjklzxcvbnm')
 app.config.from_object(__name__)
 app.config.update(dict(DATABASE=os.path.join(app.root_path, 'database.db')))
-login_manager = LoginManager()
+#login_manager = LoginManager()
 
-class User(UserMixin):
+'''class User(UserMixin):
     def __init__(self, username, tm_role=False):
         self.id = username
         self.tm_role = tm_role
@@ -21,12 +21,12 @@ users = {
     'user1': User('user1'),
     'user2': User('user2', tm_role=True),
     'qwes': User('user2', tm_role=True)
-}
+}'''
 
 
 
 
-buttons= ['это кнопка', 'это тоже', 'ТАм парам пам это тоже кнопка','А это нет', 'я пошитил это тоже кнопка','Это MaxiMax9055']
+buttons= ['это кнопка', 'это тоже', 'ТАм парам пам это тоже кнопка','А это нет', 'я пошитил это тоже кнопка','Это MaxiMax9055','И это 7']
 
 @app.route('/')
 def index():
@@ -70,6 +70,7 @@ def museum():
         if but == None:
             but=-1
         else:
+            sendik.send(but)
             print("Data:")
             print(but)
 
@@ -96,7 +97,7 @@ def irdmvov():
     return render_template('irdmvov.html')
 
 
-@app.route('/logout')
+'''@app.route('/logout')
 @login_required
 def logout():
     logout_user()
@@ -129,10 +130,11 @@ def context_processor():
     def is_tm_role():
         return current_user.tm_role if current_user.is_authenticated else False
     return dict(is_tm_role=is_tm_role)
-
+'''
 
 
 
 
 if __name__ == '__main__':
+    sendik = Sender(input("ip:"))
     app.run(host='0.0.0.0', debug=True)

@@ -1,16 +1,7 @@
-import telnetlib
-
-class RelayController:
-    def __init__(self, ip, port):
-        self.ip = ip
-        self.port = port
-        self.tn = telnetlib.Telnet(ip, port)
-
-    def onOne(self, relay_num):
-        self.tn.write(str(relay_num).encode('ascii'))
-
-    def onMassive(self, relay_states):
-        self.tn.write(str(relay_states).encode('ascii'))
-
-    def close(self):
-        self.tn.close()
+import requests
+class Sender():
+    def __init__(self,ipadr_):
+        global ipadresself_
+        ipadresself_= ipadr_
+    def send(self,npin_):
+        res = requests.get('http://'+ipadresself_+'/'+str(npin_))#192.168.43.47
