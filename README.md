@@ -17,6 +17,7 @@
  - [ ] ar online
  - [ ] registration via mail
  - [ ] email notifications
- - [ ] send data on esp 
+ - [x] send data on esp 
+ - [ ] create fier lamp
  - [ ] internet radio for sounds on ESP ((http://localhost:5000/ird/m) and (http://localhost:5000/ird/mvov))(localhost is ip)
 supreme-wallaby-assured.ngrok-free.app
